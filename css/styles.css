@@ -1,0 +1,283 @@
+html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#helpBtn{
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	line-height : 40px;
+	width : 40px;
+	font-size: 40px;
+	border-radius : 10px;
+	cursor : pointer;
+}
+
+#helpBtn:hover{
+	color: #3a8e8e ;
+	background :#d3e8e8 ;
+}
+/* ----- Slider -----*/
+
+#slider{
+	position : fixed;
+	height : 100%;
+	width : 100%;
+	z-index : 20;
+	background: rgba(0, 0, 0, 0.8);
+	opacity : 0;
+	transition : all 500ms;
+	visibility: hidden;
+	bottom: 100%;
+}
+
+#slider.visible{
+bottom: 0% !important;
+}
+
+#diapo{
+	width : 600px;
+	height : 400px;
+	background : white;
+	margin : 150px auto 0 auto;
+	background-image: url('../img/diapo1.jpg');
+	box-shadow: 0px 5px 10px black;
+	transition : all 300ms;
+}
+
+#sliderControl{
+	display: block;
+	margin: auto;
+	width: 600px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+#closeSliderBtn{
+	float : right;
+	margin-top : 10px;
+	margin-right : 10px;
+	width : 40px;
+	height : 40px;
+	font-size : 40px;
+	color: #3a8e8e;	
+	border-radius : 10px;
+	cursor : pointer;
+	transition : all 300ms;
+}
+#closeSliderBtn:hover{
+	background: #3a8e8e ;
+	color :#d3e8e8 ;	
+}
+
+
+#prevBtn,
+#startBtn,
+#nextBtn{
+	display : inline-block;
+	font-size : 40px;
+	color :	#d3e8e8 ;
+	border-radius : 10px;
+	cursor : pointer;
+	transition : all 300ms;
+	margin : auto 10px auto 10px;
+}
+
+
+#startBtn{
+	width : 50px;
+	background : #3a8e8e;
+	color : #d3e8e8 ;
+	line-height : 50px;
+	border-radius : 50%;
+}
+
+#prevBtn:hover,
+#startBtn:hover,
+#nextBtn:hover{
+	background: #d3e8e8 ;
+	color :#3a8e8e ;	
+}
+
+#prevBtn:active,
+#startBtn:active,
+#nextBtn:active{
+	background: #132f2f;	
+}
+
+
+
+/* ----- *** -----*/
+
+
+
+
+/* ----- Map -----*/
+
+
+#mapid {
+	height: 100%;
+	position: fixed;
+	width:100%;
+	z-index : 1;
+	}
+	
+#sideContainer{
+	min-height: 100%;
+	position: absolute;
+	width:20%;
+	right : 0;
+	box-sizing : border-box;
+	min-width : 350px;
+	z-index : 10;
+	background : #d3e8e8;
+	visibility: hidden;
+	opacity: 0;
+	transition : all 300ms;
+}	
+
+#infoContainer{
+	padding : 10px;
+}
+
+.leaflet-top{
+	top : 100px !important;
+}
+
+#station-info{
+	padding : 100px 20px 20px 20px;
+	background : #132f2f;
+	color : white;
+}
+
+
+header{	
+	position : fixed;
+	width : 100%;
+	padding : 20px;
+	background-color : #3a8e8e;
+	color : white;
+	text-align : center;
+	font-family: 'Merienda One', cursive;
+	z-index:99;
+	box-sizing: border-box;
+}
+
+h1{
+	margin : 0;
+}
+
+canvas{
+	width : 300px;
+	height : 300px;
+	margin : auto;
+	background: white;
+}
+
+#reservationForm{
+	padding : 20px;
+	display : none;
+}
+
+#reservationContainer{
+	position: absolute;
+	bottom : 0px;
+	width:100%;
+	z-index : 99;
+	padding : 30px;
+	text-align : center;
+	background : rgba(0, 0, 0, 0.9);
+	box-sizing : border-box;
+	color : white;
+	opacity : 0;
+	transition : all 300ms;
+	visibility: hidden;
+}
+
+#reservationForm input,
+button,
+canvas{
+	border-radius: 3px;
+	border: 1px solid #3a8e8e;
+	padding : 5px;
+	transition : all 200ms;
+}
+
+button:hover,
+#closeModalBtn:hover {
+	cursor : pointer;
+	background : #3a8e8e ;
+	color : white;
+}
+
+button:active,
+#closeModalBtn:active{
+	color : white;
+	background : #132f2f ;
+	box-shadow: 0px 0px 5px inset black;
+}
+
+#reservationForm input:focus,
+canvas:focus{
+	box-shadow: 0px 0px 3px #3a8e8e;
+}
+
+#alertContainer{
+	position: absolute;
+	width: 50%;
+	top: 50%;
+	z-index: 99;
+	text-align: center;
+	margin-left: 25%;
+	background : rgba(0, 0, 0, 0.9);
+	padding : 30px;
+	color : rgb(255, 165, 165);
+	opacity: 0;
+	visibility: hidden;
+	transition : all 300ms;
+}
+
+.modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height : 100%;
+	background:	rgba(0, 0, 0, 0.7);
+	opacity : 0;
+	visibility: hidden;
+	transition : all 300ms;
+}
+
+.modal-content{
+	position : relative;
+	width : 33%;
+	margin : 150px auto 0 auto;
+	padding: 20px;
+	background : white;
+	text-align : center;
+}
+
+#closeModalBtn{
+	position : absolute;
+	right : 20px;
+	top : 20px;
+	width : 40px;
+	line-height: 40px;
+	border-radius : 10px;
+	background : none;
+	border : none;
+	font-size : 30px;
+}
+
+.visible{
+	opacity: 1 !important;
+	visibility: visible !important;
+}

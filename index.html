@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Velo Loc'</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet"> 
+	<link href="./css/styles.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+	<script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+	
+</head>
+<body>
+
+<header><h1>Velo Loc'</h1>
+	<div id="helpBtn"><i class="iconify" data-icon="mdi:help-rhombus-outline"></i></div>
+</header>
+
+<div id='slider'>
+	<div id='diapo'>
+		<div id='closeSliderBtn'><i class="iconify" data-icon="mdi:close-thick" data-inline="false"></i></div>
+	</div>
+	<div id='sliderControl'>
+		<div id='prevBtn'><i class="iconify" data-icon="mdi:skip-previous"></i></div> 
+		<div id='startBtn' ><i class="iconify" data-icon="mdi:pause"></i></div> 
+		<div id='nextBtn'><i class="iconify" data-icon="mdi:skip-next"></i></div> 
+	</div>
+</div>
+
+<div id="mapid"></div>
+<div id="sideContainer">
+	<div id="station-info"></div>
+		<form id="reservationForm">
+			<label for="fname">Nom:</label><br>
+			<input type="text" id="fname" name="fname" value=""><br>
+			<label for="lname">Prénom</label><br>
+			<input type="text" id="lname" name="lname" value=""><br><br>
+			<button id='reservBtn' disabled  type="button">Reserver</button> 
+			<div id='modal1' class="modal">
+				<div class='modal-content'>	
+					<div id='closeModalBtn'><i class="iconify" data-icon="mdi:close-thick"></i></div>
+					<p><b>Signature :</b></p>
+					<p>
+						<canvas id="canvas" width="300" height="300">
+								Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.
+						</canvas>
+					</p>
+					<button id='submitBtn'  disabled type="submit">Confirmer</button>
+					<button id='resetBtn' type="button">Reset</button> 
+				</div>
+			</div>
+		</form> 
+	<div id="infoContainer"></div>
+</div>
+<div id="alertContainer"></div>
+<div id="reservationContainer">
+	<p id='reservation'></p>
+	<p id='time'></p>
+	<button id='deleteReservationBtn' type="button">Supprimer la réservation</button> 
+</div>
+<script type="text/javascript" src="./js/timer.js"></script>
+<script type="text/javascript" src="./js/map.js"></script>
+<script type="text/javascript" src="./js/canevas.js"></script>
+<script type="text/javascript" src="./js/session.js"></script>
+<script type="text/javascript" src="./js/formulaire.js"></script>
+<script type="text/javascript" src="./js/stations.js"></script>
+<script type="text/javascript" src="./js/ajax.js"></script>
+<script type="text/javascript" src="./js/slider.js"></script>
+<script type="text/javascript" src="./js/init.js"></script>
+
+</body>
+</html>
