@@ -6,6 +6,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
+  overflow : hidden;
 }
 
 #helpBtn{
@@ -26,8 +27,8 @@ body {
 /* ----- Slider -----*/
 
 #slider{
-	position : fixed;
-	height : 100%;
+	position : relative;
+	height : 0px;
 	width : 100%;
 	z-index : 20;
 	background: rgba(0, 0, 0, 0.8);
@@ -35,17 +36,21 @@ body {
 	transition : all 500ms;
 	visibility: hidden;
 	bottom: 100%;
+
+	overflow : hidden;
 }
 
 #slider.visible{
 bottom: 0% !important;
+height : 100vh;
+	padding-top : 150px;
 }
 
 #diapo{
 	width : 600px;
 	height : 400px;
 	background : white;
-	margin : 150px auto 0 auto;
+	margin : 0 auto 0 auto;
 	background-image: url('../img/diapo1.jpg');
 	box-shadow: 0px 5px 10px black;
 	transition : all 300ms;
@@ -123,8 +128,8 @@ bottom: 0% !important;
 
 
 #mapid {
-	height: 100%;
-	position: fixed;
+	height: 100vh;
+	position: relative;
 	width:100%;
 	z-index : 1;
 	}
@@ -133,6 +138,7 @@ bottom: 0% !important;
 	min-height: 100%;
 	position: absolute;
 	width:20%;
+	bottom : 0px;
 	right : 0;
 	box-sizing : border-box;
 	min-width : 350px;
@@ -141,6 +147,7 @@ bottom: 0% !important;
 	visibility: hidden;
 	opacity: 0;
 	transition : all 300ms;
+
 }	
 
 #infoContainer{
