@@ -44,6 +44,7 @@ class Slider {
 
     nextSlide(){
         clearInterval(this.sliderInterval);
+		this.play = false;
         diapo.style.opacity = "0"; 
         setTimeout(() => {
             diapo.style.opacity = "1";
@@ -57,6 +58,7 @@ class Slider {
 
     previousSlide(){  
         clearInterval(this.sliderInterval);
+		this.play = false;
         diapo.style.opacity = "0"; 
         setTimeout(() => {
             diapo.style.opacity = "1";
