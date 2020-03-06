@@ -13,7 +13,7 @@ class FormClass{
     }
 
     reserver(){
-		if (canvasIsFilled && canReserve == true){
+		if (canvasIsFilled && canReserve === true){
             let content = "Vélo réservé à la station : " + this.ref+ " par " + this.lname + " " + this.fname + "<br>";
             document.getElementById("reservation").innerHTML = content;
             popUp("Réservation validée");
