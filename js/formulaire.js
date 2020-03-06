@@ -24,7 +24,7 @@ class FormClass{
             const time = new Date();
             const newTimer = new Timer(time.getTime(), 20*60000);
             newTimer.start();
-            activeSession.saveDataTemporary(this.ref, time.getTime())
+            activeSession.saveDataTemporary(this.ref, time.getTime(), 20*60000)
             activeSession.saveDataPermanent(this.lname, this.fname);
             newcanvas.reset();
 		}
