@@ -14,7 +14,8 @@ class Canvas{
         this.elem.addEventListener("mousemove", (e) => this.drawLine(this.x, this.y, e.clientX , e.clientY));
         this.elem.addEventListener("touchstart", (e) => this.startdraw(e.touches[0].clientX, e.touches[0].clientY));
         this.elem.addEventListener("touchend", () => this.stopdraw());
-        this.elem.addEventListener("touchmove", (e) => this.drawLine(x, y, e.touches[0].clientX, e.touches[0].clientY));
+        this.elem.addEventListener("mouseover", () => this.stopdraw());
+        this.elem.addEventListener("touchmove", (e) => this.drawLine(this.x, this.y, e.touches[0].clientX, e.touches[0].clientY));
         document.getElementById("resetBtn").addEventListener("click", (e) => this.reset());
     }
 
