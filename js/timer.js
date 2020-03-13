@@ -17,11 +17,10 @@ class Timer{
         timeLeft = endtime - now;
         if (timeLeft < 1) {
            myForm.deleteReservation();
-        }
-        else {
+        }else {
             const minutesLeft = Math.floor(timeLeft / 60000);
             const secondLeft = Math.floor(timeLeft % 60000 /1000);
-            let content = "Temps restant : " +  minutesLeft + " minutes et " + secondLeft + " secondes";
+            const content = "Temps restant : " +  minutesLeft + " minutes et " + secondLeft + " secondes";
             document.getElementById("time").innerHTML = content;
         }
     }

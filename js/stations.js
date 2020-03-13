@@ -46,12 +46,12 @@ class Station{
 
 	setForm(){
 		switch (true){
-			case (this.status == "OPEN" && canReserve == true && this.bikes > 0) :
+			case (this.status === "OPEN" && canReserve === true && this.bikes > 0) :
 				infoContainer.innerHTML = "";
 				reservationForm.style.display = "block";
 				myForm.ref = this.name;
 			break;
-			case (this.status == "CLOSED"):
+			case (this.status === "CLOSED"):
 				reservationForm.style.display = "none";
 				infoContainer.innerHTML = "Cette station est fermée";
 				infoContainer.classList.add("visible");

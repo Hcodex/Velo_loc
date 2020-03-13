@@ -9,9 +9,9 @@ class Session{
 
     init(){
         this.getData()       
-        if(this.fname != null) document.getElementById("fname").value = this.fname;
-        if(this.lname != null) document.getElementById("lname").value = this.lname;
-        if (this.ref != null && this.duration != null){
+        if(this.fname !== null) document.getElementById("fname").value = this.fname;
+        if(this.lname !== null) document.getElementById("lname").value = this.lname;
+        if (this.ref !== null && this.duration !== null){
             let content = "Vélo réservé à la station : " + this.ref+ " par " + this.lname + " " + this.fname + "<br>";
             document.getElementById("reservation").innerHTML = content;
             reservationContainer.classList.add("visible");

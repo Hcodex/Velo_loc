@@ -4,27 +4,29 @@ class Slider {
         this.slides = ["diapo1.jpg", "diapo2.jpg", "diapo3.jpg", "diapo4.jpg"];
         this.slideCursor = 0;
         this.play = false ;
+        this.active = false;
     }
 
    init(){
-    const slider = document.getElementById("slider");
-    const closeSliderBtn = document.getElementById("closeSliderBtn");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const startBtn = document.getElementById("startBtn");
-    const helpBtn = document.getElementById("helpBtn");
-    startBtn.onclick = () => mySlider.togglePause();
-    prevBtn.onclick = () => mySlider.previousSlide();
-    nextBtn.onclick = () => mySlider.nextSlide();
-    closeSliderBtn.onclick = () => mySlider.closeSlider();
-    document.addEventListener("keydown", (e) => mySlider.keyDown(e));
-    helpBtn.onclick = () => mySlider.toggleSlider();
-    this.sliderStart();
+        const slider = document.getElementById("slider");
+        const closeSliderBtn = document.getElementById("closeSliderBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const startBtn = document.getElementById("startBtn");
+        const helpBtn = document.getElementById("helpBtn");
+        startBtn.onclick = () => mySlider.togglePause();
+        prevBtn.onclick = () => mySlider.previousSlide();
+        nextBtn.onclick = () => mySlider.nextSlide();
+        closeSliderBtn.onclick = () => mySlider.closeSlider();
+        document.addEventListener("keydown", (e) => mySlider.keyDown(e));
+        helpBtn.onclick = () => mySlider.toggleSlider();
+        this.sliderStart();
     }
 
     sliderStart(){
         if (sessionStorage.getItem("sliderViewed") != "true"){
             slider.classList.add("visible");
+            this.active = true;
             clearInterval(this.sliderInterval);
             this.sliderInterval = setInterval(this.autoSlide.bind(this), 5000);
         }
@@ -84,10 +86,10 @@ class Slider {
     }
 
     keyDown(e){
-        if(e.keyCode === 37){
+        if(e.keyCode === 37 && this.active === true){
             this.previousSlide();
         }
-        else if(e.keyCode === 39){
+        else if(e.keyCode === 39 && this.active === true){
            this.nextSlide();
         }
     }
@@ -95,6 +97,7 @@ class Slider {
     closeSlider(){
         slider.classList.remove("visible");
         sessionStorage.setItem("sliderViewed", "true");
+        this.active =  false;
     }
 
     toggleSlider(){
@@ -102,11 +105,13 @@ class Slider {
             slider.classList.remove("visible");
             clearInterval(this.sliderInterval);
             this.play = false;
+            this.active =  false;
         }
         else{   
             slider.classList.add("visible");
             clearInterval(this.sliderInterval);
             this.play = true;
+            this.active =  true;
             this.sliderInterval = setInterval(this.autoSlide.bind(this), 5000);
         }  
     }
