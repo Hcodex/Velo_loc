@@ -20,14 +20,14 @@ class Canvas{
     }
 
     startdraw(x1,y1){
-        this.x= x1 - this.elem.getBoundingClientRect().left;
-        this.y=y1 - this.elem.getBoundingClientRect().top;
+        this.x = x1 - this.elem.getBoundingClientRect().left;
+        this.y = y1 - this.elem.getBoundingClientRect().top;
         this.drawing = true;
     }
 
     stopdraw(){
         this.drawing = false;
-        this.x= 0 ;
+        this.x = 0 ;
         this.y = 0;
     }
 
